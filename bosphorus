@@ -1,3 +1,5 @@
+#! /bin/bash
+
 function bosphorus() {
 	local dir="$PWD/" version
 
@@ -9,7 +11,7 @@ function bosphorus() {
 
 			if [[ "$version" == "$DOCKER_MACHINE_NAME" ]]; then return
 			else
-        echo "Switching to " $version
+        echo "Setting active docker-machine to" $version
         eval $(docker-machine env $version)
 				return $?
 			fi
