@@ -1,19 +1,25 @@
 #! /bin/bash
+unset BOSPHORUS_VERSION
 
 function bosphorus() {
-	local dir="$PWD/" version
+	local dir="$PWD/" machine_name return_value
 
 	until [[ -z "$dir" ]]; do
 		dir="${dir%/*}"
 
-		if { read -r version <"$dir/.docker-machine"; } 2>/dev/null || [[ -n "$version" ]]; then
-			version="${version%%[[:space:]]}"
+		if { read -r machine_name <"$dir/.docker-machine"; } 2>/dev/null || [[ -n "$machine_name" ]]; then
+			machine_name="${machine_name%%[[:space:]]}"
 
-			if [[ "$version" == "$DOCKER_MACHINE_NAME" ]]; then return
+			if [[ "$machine_name" == "$BOSPHORUS_VERSION" ]]; then return
 			else
-        echo "Setting active docker-machine to" $version
-        eval $(docker-machine env $version)
-				return $?
+        echo "Setting active docker-machine to" $machine_name
+        eval $(docker-machine env $machine_name)
+        return_value=$?
+        BOSPHORUS_VERSION="$machine_name"
+        if [[ $return_value -ne 0 ]] ; then
+          echo "Failed to switch to" $machine_name
+        fi
+				return $return_value
 			fi
 		fi
 	done
