@@ -21,7 +21,6 @@ or if you have a swarm
 Download `bosphorus` to `SOMEWHERE`. 
 Add `source SOMEWHERE/bosphorus` to your `.zshrc` or `.bashrc` or wherever it gets loaded.
 
-### Brew
-*coming soon*
+## Credit
 
 Heavily inspired (read: pirated) by [chruby](https://github.com/postmodern/chruby) <3
