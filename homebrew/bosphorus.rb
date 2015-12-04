@@ -5,9 +5,9 @@
 class Bosphorus < Formula
   desc ""
   homepage ""
-  url "https://github.com/robertjung/bosphorus/archive/0.3.tar.gz"
-  sha256 "d682bebf2858f2884a9e7f7bd26a4907ea2562b93fe43f873cf0d589274d322c"
-  version "0.3"
+  url "https://github.com/robertjung/bosphorus/archive/0.4.tar.gz"
+  sha256 "5d21016c36c1b49df780af9cb0104983bc0eb729bd672a827af9cdf9f521b23a"
+  version "0.4"
 
   def install
     file = "bosphorus"
