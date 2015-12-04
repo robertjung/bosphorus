@@ -1,3 +1,5 @@
+#! /bin/bash
+
 function bosphorus() {
 	local dir="$PWD/" version
 
@@ -9,7 +11,7 @@ function bosphorus() {
 
 			if [[ "$version" == "$DOCKER_MACHINE_NAME" ]]; then return
 			else
-        echo "Switching to " $version
+        echo "Setting active docker-machine to" $version
         eval $(docker-machine env $version)
 				return $?
 			fi
@@ -22,10 +24,9 @@ if [[ -n "$ZSH_VERSION" ]]; then
 		precmd_functions+=("bosphorus")
 	fi
 elif [[ -n "$BASH_VERSION" ]]; then
-	#trap '[[ "$BASH_COMMAND" != "$PROMPT_COMMAND" ]] && bosphorus' DEBUG
-	#if [[ ! "$PROMPT_COMMAND" == *bosphorus* ]]; then
-    #PROMPT_COMMAND=$PROMPT_COMMAND && "bosphorus"
+	if [[ "$PROMPT_COMMAND" == "" ]]; then
     PROMPT_COMMAND="bosphorus"
-    echo "prompting "$PROMPT_COMMAND
-  #fi
+  else
+    PROMPT_COMMAND=$PROMPT_COMMAND && "bosphorus"
+  fi
 fi

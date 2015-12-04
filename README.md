@@ -18,7 +18,10 @@ or if you have a swarm
 
 ## Manual Installation
 
-Download bosphorus to SOMEWHERE. 
-Add `source SOMEWHERE/bosphorus` into your `.zshrc` or `.bashrc` or wherever it gets loaded.
+Download `bosphorus` to `SOMEWHERE`. 
+Add `source SOMEWHERE/bosphorus` to your `.zshrc` or `.bashrc` or wherever it gets loaded.
 
-Heavily inspired (read: pirated) by chruby <3
+### Brew
+*coming soon*
+
+Heavily inspired (read: pirated) by [chruby](https://github.com/postmodern/chruby) <3
