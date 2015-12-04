@@ -4,11 +4,19 @@ Easily navigate the oceans with bosphorus.
 
 ## Usage
 
-Add a `.docker-machine` file into your project directory, home directory or wherever and bosphorus will load the corresponding docker environment.
+Add a `.docker-machine` file into your project directory, home directory or wherever and bosphorus will load the corresponding docker environment. Similarly to how `.ruby-version` would work.
 
-For example `echo default > ~/projects/local/.docker-machine` or `echo production --swarm > ~/projects/deploy-scripts/.docker-machine`
+For example:
+`echo my-docker-machine > ~/projects/local/.docker-machine`
 
-## Installation
+or if you have a swarm
+`echo production --swarm > ~/projects/deploy-scripts/.docker-machine`
+
+## Brew
+
+`brew install https://raw.githubusercontent.com/robertjung/bosphorus/master/homebrew/bosphorus.rb`
+
+## Manual Installation
 
 Download bosphorus to SOMEWHERE. 
 Add `source SOMEWHERE/bosphorus` into your `.zshrc` or `.bashrc` or wherever it gets loaded.
