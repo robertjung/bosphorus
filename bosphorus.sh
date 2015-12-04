@@ -22,10 +22,9 @@ if [[ -n "$ZSH_VERSION" ]]; then
 		precmd_functions+=("bosphorus")
 	fi
 elif [[ -n "$BASH_VERSION" ]]; then
-	#trap '[[ "$BASH_COMMAND" != "$PROMPT_COMMAND" ]] && bosphorus' DEBUG
-	#if [[ ! "$PROMPT_COMMAND" == *bosphorus* ]]; then
-    #PROMPT_COMMAND=$PROMPT_COMMAND && "bosphorus"
+	if [[ "$PROMPT_COMMAND" == "" ]]; then
     PROMPT_COMMAND="bosphorus"
-    echo "prompting "$PROMPT_COMMAND
-  #fi
+  else
+    PROMPT_COMMAND=$PROMPT_COMMAND && "bosphorus"
+  fi
 fi
