@@ -16,6 +16,9 @@ or if you have a swarm
 
 `brew install https://raw.githubusercontent.com/robertjung/bosphorus/master/homebrew/bosphorus.rb`
 
+Then add the following to your `~/.bashrc` or `~/.zshrc` file:
+`source /usr/local/bin/bosphorus`
+
 ## Manual Installation
 
 Download `bosphorus` to `SOMEWHERE`. 
